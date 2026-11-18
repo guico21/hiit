@@ -13,7 +13,7 @@
 </head>
 <body data-screen="builder" data-phase="build">
 
-<!-- ============ ICON SPRITE ============ -->
+<!-- ================= ICON SPRITE ================= -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
   <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
@@ -44,21 +44,20 @@
   <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4M10 2h4"/></symbol>
   <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"/><path d="M10 17 5 12l5-5M5 12h12"/></symbol>
 </svg>
 
-<!-- ============ AMBIENT BACKGROUND ============ -->
 <div class="bg"><div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div><div class="vignette"></div></div>
 <div class="grain"></div>
 
-<!-- ============ HEADER ============ -->
+<!-- ================= HEADER ================= -->
 <header>
   <button class="brand" id="brandBtn" title="AFTERBURN — HIIT Engine">
     <span class="brand-mark"><svg class="ic"><use href="#i-flame"/></svg></span>
     <span><span class="brand-name">AFTERBURN</span><div class="brand-tag">HIIT&nbsp;ENGINE</div></span>
   </button>
   <div class="hdr-actions">
-    <div class="live" id="liveDot" hidden><span class="live-dot"></span><span id="liveTxt">LIVE</span></div>
-    <button class="hbtn danger" id="btn-end" hidden><svg class="ic" style="width:15px;height:15px"><use href="#i-x"/></svg><span class="ht">END</span></button>
+    <button class="hbtn danger" id="btn-end" hidden><svg class="ic" style="width:15px;height:15px"><use href="#i-out"/></svg><span class="ht">EXIT</span></button>
     <button class="hbtn on" id="btn-mute" title="Mute / unmute everything (M)" aria-pressed="false">
       <svg class="ic" style="width:16px;height:16px"><use id="mute-ic" href="#i-vol"/></svg><span class="ht" id="mute-txt">SOUND&nbsp;ON</span>
     </button>
@@ -66,19 +65,16 @@
   </div>
 </header>
 
-<!-- ============ SCREEN: BUILDER ============ -->
+<!-- ================= BUILDER ================= -->
 <main id="screen-builder" class="screen">
   <div class="wrap">
     <div class="mast reveal">
-      <div>
-        <div class="mast-eyebrow">HIIT SESSION BUILDER</div>
-        <h1>BUILD YOUR <span class="grad">BURN.</span></h1>
-        <p>Sequence your exercises, dial in the intervals and rests, load a soundtrack — then empty the tank.</p>
-      </div>
-      <div class="mast-clock"><label>TOTAL SESSION</label><b id="mast-total">0:00</b></div>
+      <div class="mast-eyebrow">SESSION BUILDER</div>
+      <h1>BUILD YOUR <span class="grad">BURN.</span></h1>
+      <p>Three steps — pick your moves, shape the session, load a soundtrack. Then press start.</p>
     </div>
 
-    <div class="presets reveal" style="animation-delay:.08s">
+    <div class="presets reveal" style="animation-delay:.06s">
       <span class="presets-lab">QUICK BUILDS</span>
       <button class="preset" data-preset="tabata" style="--pc:#FF4D2E"><svg class="ic"><use href="#i-flame"/></svg>TABATA 20/10</button>
       <button class="preset" data-preset="fullbody" style="--pc:#FF8A1E"><svg class="ic"><use href="#i-bolt"/></svg>FULL BODY BURN</button>
@@ -89,11 +85,14 @@
     <div class="grid">
       <div class="col-main">
 
-        <!-- THE LINEUP -->
-        <section class="card reveal" style="animation-delay:.14s;--cc:#FF4D2E">
+        <!-- 01 LINEUP -->
+        <section class="card reveal" style="animation-delay:.12s;--cc:#FF4D2E">
           <div class="card-h">
-            <span class="chip-ic"><svg class="ic"><use href="#i-bolt"/></svg></span>
-            <div><div class="card-title">THE LINEUP</div><div class="card-sub"><span id="ex-count">0</span> exercises · drag <svg class="ic" style="width:10px;height:10px;display:inline-block;vertical-align:-1px"><use href="#i-grip"/></svg> or arrows to reorder</div></div>
+            <span class="step-no">01</span>
+            <div class="card-heads">
+              <div class="card-title">THE LINEUP</div>
+              <div class="card-sub">One <b>REST</b> value — it runs after every set and before the next move.</div>
+            </div>
             <span class="spacer"></span>
             <button class="icon-btn danger" id="btn-clear" title="Clear all exercises"><svg class="ic"><use href="#i-trash"/></svg></button>
             <button class="btn btn-sm" id="btn-lib-1"><svg class="ic" style="width:14px;height:14px"><use href="#i-plus"/></svg>Library</button>
@@ -103,50 +102,45 @@
             <div class="ex-empty" id="ex-empty" hidden>
               <svg class="ic"><use href="#i-timer"/></svg>
               <div class="big">NOTHING IN THE TANK</div>
-              <div>Add exercises from the library or type your own below.</div>
+              <div>Pull moves from the library, or type your own below.</div>
               <button class="btn btn-go btn-sm" id="btn-lib-2" style="margin-top:14px"><svg class="ic" style="width:14px;height:14px"><use href="#i-plus"/></svg>OPEN LIBRARY</button>
             </div>
             <div class="quick-add">
-              <input class="txt-in" id="quick-name" placeholder="Custom exercise name… e.g. Kettlebell Swings" maxlength="42">
+              <input class="txt-in" id="quick-name" placeholder="Custom move… e.g. Kettlebell Swings" maxlength="42">
               <button class="btn" id="quick-add"><svg class="ic" style="width:15px;height:15px"><use href="#i-plus"/></svg>Add</button>
             </div>
           </div>
         </section>
 
-        <!-- SESSION STRUCTURE -->
-        <section class="card reveal" style="animation-delay:.2s;--cc:#FFB020">
+        <!-- 02 SHAPE -->
+        <section class="card reveal" style="animation-delay:.18s;--cc:#FFB020">
           <div class="card-h">
-            <span class="chip-ic"><svg class="ic"><use href="#i-timer"/></svg></span>
-            <div><div class="card-title">SESSION STRUCTURE</div><div class="card-sub">rounds, prep, warm-up &amp; cool-down</div></div>
+            <span class="step-no">02</span>
+            <div class="card-heads">
+              <div class="card-title">SESSION SHAPE</div>
+              <div class="card-sub">A 3-second GET READY always runs before the clock starts.</div>
+            </div>
           </div>
           <div class="card-b">
             <div class="struct-row">
-              <div class="struct-lab"><b>Circuit rounds</b><span>repeat the whole sequence</span></div>
+              <div class="struct-lab"><b>Circuit rounds</b><span>repeat the whole lineup</span></div>
               <div class="step" data-k="rounds"><div class="step-row">
                 <button class="step-btn" data-act="dec" aria-label="fewer rounds"><svg class="ic"><use href="#i-minus"/></svg></button>
-                <span class="step-val"><input type="number" inputmode="numeric" value="3"><span class="unit">×</span></span>
+                <span class="step-val"><input type="number" inputmode="numeric" value="3" aria-label="rounds"><span class="unit">×</span></span>
                 <button class="step-btn" data-act="inc" aria-label="more rounds"><svg class="ic"><use href="#i-plus"/></svg></button>
-              </div><span class="step-lab">ROUNDS</span></div>
-            </div>
-            <div class="struct-row">
-              <div class="struct-lab"><b>Get-ready countdown</b><span>find your stance before the gun</span></div>
-              <div class="step" data-k="prep"><div class="step-row">
-                <button class="step-btn" data-act="dec" aria-label="less prep"><svg class="ic"><use href="#i-minus"/></svg></button>
-                <span class="step-val"><input type="number" inputmode="numeric" value="10"><span class="unit">s</span></span>
-                <button class="step-btn" data-act="inc" aria-label="more prep"><svg class="ic"><use href="#i-plus"/></svg></button>
-              </div><span class="step-lab">PREP</span></div>
+              </div></div>
             </div>
 
             <div class="sub-block" id="warm-block" style="--sc:#FFB020">
               <div class="sub-head"><span class="dot"></span><b>Warm-up</b>
                 <button class="switch" data-toggle="warmup.on" role="switch" aria-checked="true" aria-label="warm-up on/off"></button></div>
               <div class="sub-fields">
-                <input class="txt-in" data-field="warmup.name" value="Warm Up" maxlength="30" style="flex:1;min-width:120px" aria-label="warm-up name">
+                <input class="txt-in" data-field="warmup.name" value="Warm Up" maxlength="30" aria-label="warm-up name">
                 <div class="step" data-k="warmup.secs"><div class="step-row">
                   <button class="step-btn" data-act="dec" aria-label="shorter warm-up"><svg class="ic"><use href="#i-minus"/></svg></button>
-                  <span class="step-val"><input type="number" inputmode="numeric" value="180"><span class="unit">s</span></span>
+                  <span class="step-val"><input type="number" inputmode="numeric" value="180" aria-label="warm-up seconds"><span class="unit">s</span></span>
                   <button class="step-btn" data-act="inc" aria-label="longer warm-up"><svg class="ic"><use href="#i-plus"/></svg></button>
-                </div><span class="step-lab">DURATION</span></div>
+                </div></div>
               </div>
             </div>
 
@@ -154,22 +148,22 @@
               <div class="sub-head"><span class="dot"></span><b>Cool-down</b>
                 <button class="switch" data-toggle="cooldown.on" role="switch" aria-checked="true" aria-label="cool-down on/off"></button></div>
               <div class="sub-fields">
-                <input class="txt-in" data-field="cooldown.name" value="Cooldown" maxlength="30" style="flex:1;min-width:120px" aria-label="cool-down name">
+                <input class="txt-in" data-field="cooldown.name" value="Cooldown" maxlength="30" aria-label="cool-down name">
                 <div class="step" data-k="cooldown.secs"><div class="step-row">
                   <button class="step-btn" data-act="dec" aria-label="shorter cool-down"><svg class="ic"><use href="#i-minus"/></svg></button>
-                  <span class="step-val"><input type="number" inputmode="numeric" value="120"><span class="unit">s</span></span>
+                  <span class="step-val"><input type="number" inputmode="numeric" value="120" aria-label="cool-down seconds"><span class="unit">s</span></span>
                   <button class="step-btn" data-act="inc" aria-label="longer cool-down"><svg class="ic"><use href="#i-plus"/></svg></button>
-                </div><span class="step-lab">DURATION</span></div>
+                </div></div>
               </div>
             </div>
 
-            <div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:6px">
+            <div class="settings">
               <div class="settings-row">
-                <div class="struct-lab"><b>Voice coach</b><span>announces each phase out loud</span></div>
+                <div class="struct-lab"><b>Voice coach</b><span>calls each phase out loud</span></div>
                 <button class="switch" data-toggle="voice" role="switch" aria-checked="true" aria-label="voice coach"></button>
               </div>
               <div class="settings-row">
-                <div class="struct-lab"><b>Auto fullscreen on start</b><span>lock in, zero distractions</span></div>
+                <div class="struct-lab"><b>Fullscreen on start</b><span>lock in, zero distractions</span></div>
                 <button class="switch" data-toggle="autoFullscreen" role="switch" aria-checked="true" aria-label="auto fullscreen"></button>
               </div>
             </div>
@@ -178,12 +172,14 @@
       </div>
 
       <aside class="col-side">
-
-        <!-- SOUNDTRACK -->
-        <section class="card reveal" style="animation-delay:.26s;--cc:#2EE6FF">
+        <!-- 03 SOUNDTRACK -->
+        <section class="card reveal" style="animation-delay:.24s;--cc:#2EE6FF">
           <div class="card-h">
-            <span class="chip-ic"><svg class="ic"><use href="#i-music"/></svg></span>
-            <div><div class="card-title">SOUNDTRACK</div><div class="card-sub">fuel for the fire</div></div>
+            <span class="step-no">03</span>
+            <div class="card-heads">
+              <div class="card-title">SOUNDTRACK</div>
+              <div class="card-sub">Pick one source — it plays through the whole session.</div>
+            </div>
           </div>
           <div class="card-b">
             <div class="mtabs">
@@ -193,29 +189,38 @@
               <button class="mtab" data-mtab="youtube"><svg class="ic"><use href="#i-yt"/></svg>YOUTUBE</button>
             </div>
 
-            <div class="mpanel" id="mpanel-beats"><div id="beats-list"></div>
-              <div class="mnote">Built-in engine beats — synthesized live, zero downloads, loop forever.</div></div>
+            <div class="mpanel" id="mpanel-beats">
+              <div id="beats-list"></div>
+              <div class="mnote">Engine beats — synthesized live in your browser. No files, no loading, loops forever.</div>
+            </div>
 
             <div class="mpanel" id="mpanel-project" hidden>
               <div id="project-list"></div>
               <div class="mempty" id="project-empty">
                 <svg class="ic"><use href="#i-folder"/></svg>
-                No project tracks found.<br>Drop MP3s into <code>audio/</code> in your repo and list them in <code>audio/tracks.json</code>.
+                No project tracks yet.<br>Add MP3s to <code>audio/</code> in your repo and list them in <code>audio/tracks.json</code>.
               </div>
             </div>
 
             <div class="mpanel" id="mpanel-device" hidden>
-              <div class="dropzone" id="dropzone"><svg class="ic"><use href="#i-device"/></svg>Drop audio files here or tap to browse<br><span style="font-size:10.5px;color:var(--faint)">MP3 · WAV · OGG · M4A — stays on your device</span></div>
+              <div class="dropzone" id="dropzone"><svg class="ic"><use href="#i-device"/></svg>Drop audio files or tap to browse<br><span class="dz-sub">MP3 · WAV · OGG · M4A — never leaves your device</span></div>
               <div id="device-list"></div>
             </div>
 
             <div class="mpanel" id="mpanel-youtube" hidden>
               <div class="yt-row">
                 <input class="txt-in" id="yt-url" placeholder="Paste a YouTube link…" inputmode="url">
-                <button class="btn btn-sm" id="yt-load" style="height:42px">Load</button>
+                <button class="btn btn-sm" id="yt-load">Load</button>
               </div>
-              <div class="yt-status" id="yt-status">Audio-only mode — the video stays hidden, you just hear it.</div>
-              <div class="mnote">Some videos block embedding. If one fails, try another link. Press play once after loading if your browser blocks autoplay.</div>
+              <div class="yt-card" id="yt-card" hidden>
+                <button class="yt-big" id="yt-play" title="Play / pause audio"><svg class="ic"><use id="yt-play-ic" href="#i-play"/></svg></button>
+                <div class="yt-info">
+                  <b id="yt-title">Loading…</b>
+                  <span class="yt-status" id="yt-status">Connecting…</span>
+                </div>
+                <a class="yt-open" id="yt-open" href="#" target="_blank" rel="noopener" title="Open on YouTube"><svg class="ic"><use href="#i-out"/></svg></a>
+              </div>
+              <div class="mnote"><b>Audio only</b> — the video stays hidden. Browsers block autoplay with sound: if it doesn't start, press the round play button once. Videos that disable embedding can't be streamed here.</div>
             </div>
 
             <div class="mc">
@@ -228,55 +233,49 @@
         </section>
 
         <!-- LAUNCH -->
-        <section class="card reveal" style="animation-delay:.32s;--cc:#C6FF3F">
-          <div class="card-h">
-            <span class="chip-ic"><svg class="ic"><use href="#i-flag"/></svg></span>
-            <div><div class="card-title">LAUNCH</div><div class="card-sub">your session at a glance</div></div>
-          </div>
+        <section class="card launch reveal" style="animation-delay:.3s;--cc:#C6FF3F">
           <div class="card-b">
-            <div class="sum-total"><b id="sum-total">0:00</b><span>TOTAL</span></div>
-            <div class="sum-grid">
-              <div class="sum-cell" style="--vc:#FF6A3D"><label>WORK</label><b id="sum-work">0:00</b></div>
-              <div class="sum-cell" style="--vc:#2EE6FF"><label>REST</label><b id="sum-rest">0:00</b></div>
-              <div class="sum-cell" style="--vc:#C6FF3F"><label>INTERVALS</label><b id="sum-int">0</b></div>
-              <div class="sum-cell" style="--vc:#9D6BFF"><label>ROUNDS</label><b id="sum-rounds">0</b></div>
-            </div>
-            <div class="sum-includes" id="sum-includes"></div>
-            <div class="tl" id="sum-timeline" title="Session timeline"></div>
+            <div class="sum-total"><b id="sum-total">0:00</b><span>TOTAL<br>SESSION</span></div>
+            <div class="tl" id="sum-timeline" title="Session composition"></div>
+            <div class="sum-line" id="sum-line"></div>
+            <div class="sum-line dim" id="sum-includes"></div>
             <button class="btn btn-go" id="btn-start"><svg class="ic"><use href="#i-play"/></svg>START SESSION</button>
-            <div class="sum-hint">SPACE pause · ← → skip · F fullscreen</div>
           </div>
         </section>
       </aside>
     </div>
 
-    <footer class="reveal" style="animation-delay:.4s">
-      <span>🔥 AFTERBURN · no excuses, just intervals · works offline once loaded</span>
-      <span class="keys"><kbd>Space</kbd> pause <kbd>←</kbd><kbd>→</kbd> skip <kbd>F</kbd> fullscreen <kbd>M</kbd> mute <kbd>Esc</kbd> end</span>
+    <footer class="reveal" style="animation-delay:.36s">
+      <span>🔥 AFTERBURN · no excuses, just intervals</span>
+      <span class="keys"><kbd>Space</kbd> pause <kbd>←</kbd><kbd>→</kbd> skip <kbd>F</kbd> fullscreen <kbd>M</kbd> mute <kbd>Esc</kbd> exit</span>
     </footer>
   </div>
 </main>
 
-<!-- ============ SCREEN: LIVE SESSION ============ -->
+<!-- ================= LIVE SESSION ================= -->
 <section id="screen-session" class="screen" hidden>
   <canvas id="fx"></canvas>
   <div class="s-glow"></div>
+
   <div class="s-wrap">
-    <div class="s-hud">
-      <div>
-        <div class="phase-badge"><span class="pd"></span><span id="s-phase-txt">GET READY</span></div>
-        <div class="hud-chips">
-          <span class="hud-chip" id="hud-ex">EX 1/6</span>
-          <span class="hud-chip" id="hud-set">SET 1/1</span>
-          <span class="hud-chip" id="hud-round">ROUND 1/3</span>
+    <!-- ONE session-level module: totals + what's left -->
+    <div class="s-top">
+      <div class="sp-row">
+        <div class="sp-t"><label>ELAPSED</label><b id="hud-elapsed">0:00</b></div>
+        <div class="sp-mid">
+          <div class="tl" id="s-timeline" title="Tap to jump anywhere in the session"></div>
+          <div class="sp-meta"><span>WHOLE SESSION</span><span id="sp-pct">0%</span></div>
         </div>
+        <div class="sp-t right"><label>LEFT</label><b id="hud-left">0:00</b></div>
       </div>
-      <div class="s-hud-r">
-        <div class="hud-clock"><label>ELAPSED</label><b id="hud-elapsed">0:00</b></div>
-        <div class="hud-clock left"><label>REMAINING</label><b id="hud-left">0:00</b></div>
+      <div class="s-counts" id="s-counts">
+        <div class="cnt"><b id="cnt-ex">0</b><span>EXERCISES LEFT<i>this round</i></span></div>
+        <div class="cnt"><b id="cnt-set">0</b><span>SETS LEFT<i>this move</i></span></div>
+        <div class="cnt"><b id="cnt-round">0</b><span>ROUNDS LEFT<i>of session</i></span></div>
       </div>
     </div>
 
+    <!-- ONE interval-level focus: the ring -->
     <div class="s-stage">
       <div class="done-banner" id="done-banner"><svg class="ic"><use href="#i-check"/></svg><span id="done-banner-txt">INTERVAL COMPLETE</span></div>
       <div class="ring-wrap" id="ring-tap" role="button" tabindex="0" aria-label="Tap to pause or resume">
@@ -291,8 +290,7 @@
         </svg>
         <div class="ring-center">
           <div class="rc-phase" id="rc-phase">GET READY</div>
-          <div class="rc-time" id="rc-time">0:10</div>
-          <div class="rc-sub" id="rc-sub">find your stance</div>
+          <div class="rc-time" id="rc-time">0:00</div>
         </div>
         <div class="pause-veil"><svg class="ic"><use href="#i-play"/></svg><span>PAUSED · TAP TO RESUME</span></div>
       </div>
@@ -305,7 +303,6 @@
     </div>
 
     <div class="s-deck">
-      <div class="tl" id="s-timeline" title="Tap anywhere to jump"></div>
       <div class="s-controls">
         <button class="ctl" id="btn-prev" title="Previous phase (←)"><svg class="ic"><use href="#i-prev"/></svg></button>
         <button class="ctl ctl-big" id="btn-pause" title="Pause / resume (Space)"><svg class="ic"><use id="pause-ic" href="#i-pause"/></svg></button>
@@ -319,9 +316,21 @@
       </div>
     </div>
   </div>
+
+  <!-- 3-second GET READY takeover -->
+  <div class="intro" id="intro" hidden>
+    <div class="intro-rings"><span></span><span></span><span></span></div>
+    <div class="intro-in">
+      <div class="intro-title">GET READY</div>
+      <div class="intro-count" id="intro-count">3</div>
+      <div class="intro-first" id="intro-first"></div>
+      <div class="intro-total" id="intro-total"></div>
+      <button class="intro-skip" id="intro-skip">TAP ANYWHERE TO SKIP</button>
+    </div>
+  </div>
 </section>
 
-<!-- ============ SCREEN: COMPLETE ============ -->
+<!-- ================= COMPLETE ================= -->
 <section id="screen-complete" class="screen" hidden>
   <canvas id="confetti"></canvas>
   <div class="c-wrap">
@@ -333,8 +342,6 @@
       <div class="c-stat" style="--vc:#FF6A3D"><label>WORK</label><b id="st-work">0:00</b></div>
       <div class="c-stat" style="--vc:#2EE6FF"><label>REST</label><b id="st-rest">0:00</b></div>
       <div class="c-stat" style="--vc:#C6FF3F"><label>INTERVALS</label><b id="st-int">0</b></div>
-      <div class="c-stat" style="--vc:#FFB020"><label>EXERCISES</label><b id="st-ex">0</b></div>
-      <div class="c-stat" style="--vc:#9D6BFF"><label>ROUNDS</label><b id="st-rounds">0</b></div>
     </div>
     <div class="c-btns">
       <button class="btn btn-go" id="btn-again"><svg class="ic"><use href="#i-repeat"/></svg>GO AGAIN</button>
@@ -344,27 +351,27 @@
   </div>
 </section>
 
-<!-- mobile sticky start bar -->
+<!-- mobile launch bar (the only total + start on small screens) -->
 <div id="startbar">
-  <div class="t"><label>TOTAL</label><b id="m-total">0:00</b></div>
-  <button class="btn btn-go" id="btn-start-m"><svg class="ic"><use href="#i-play"/></svg>START SESSION</button>
+  <div class="t"><label>TOTAL SESSION</label><b id="m-total">0:00</b></div>
+  <button class="btn btn-go" id="btn-start-m"><svg class="ic"><use href="#i-play"/></svg>START</button>
 </div>
 
-<!-- ============ MODAL: EXERCISE LIBRARY ============ -->
+<!-- ================= LIBRARY MODAL ================= -->
 <div class="modal" id="modal-lib" role="dialog" aria-modal="true" aria-label="Exercise library">
   <div class="modal-bg" data-close="lib"></div>
   <div class="modal-box">
     <div class="modal-h">
-      <span class="chip-ic" style="--cc:#2EE6FF;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,#2EE6FF 15%,transparent);color:#2EE6FF"><svg class="ic" style="width:16px;height:16px"><use href="#i-search"/></svg></span>
+      <span class="mh-ic"><svg class="ic"><use href="#i-search"/></svg></span>
       <b>EXERCISE LIBRARY</b>
       <button class="icon-btn" id="lib-close" title="Close"><svg class="ic"><use href="#i-x"/></svg></button>
     </div>
     <div class="modal-b">
       <div class="lib-custom">
-        <input class="txt-in" id="lib-custom" placeholder="Create your own exercise…" maxlength="42">
+        <input class="txt-in" id="lib-custom" placeholder="Create your own move…" maxlength="42">
         <button class="btn btn-sm" id="lib-custom-add" style="height:42px"><svg class="ic" style="width:14px;height:14px"><use href="#i-plus"/></svg>Add</button>
       </div>
-      <div class="lib-search"><svg class="ic"><use href="#i-search"/></svg><input class="txt-in" id="lib-search" placeholder="Search 50 exercises…"></div>
+      <div class="lib-search"><svg class="ic"><use href="#i-search"/></svg><input class="txt-in" id="lib-search" placeholder="Search 50 moves…"></div>
       <div class="lib-chips" id="lib-chips"></div>
       <div class="lib-grid" id="lib-grid"></div>
     </div>
@@ -372,7 +379,7 @@
   </div>
 </div>
 
-<!-- ============ MODAL: CONFIRM ============ -->
+<!-- ================= CONFIRM MODAL ================= -->
 <div class="modal" id="modal-confirm" role="dialog" aria-modal="true" aria-label="Confirm">
   <div class="modal-bg" data-close="confirm"></div>
   <div class="modal-box small">
